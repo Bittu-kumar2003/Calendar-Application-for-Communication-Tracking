@@ -107,12 +107,15 @@ Ensure you have the following installed on your machine:
 frontend/
 |-- src/
 |   |-- components/
-|   |   |-- Navbar.js
-|   |   |-- AdminDashboard.js
-|   |   |-- AddCompanyForm.js
-|   |   |-- CompanyList.js
-|   |-- App.js
-|   |-- index.js
+|   |   |-- Navbar.jsx
+|   |   |-- AdminDashboard.jsx
+|   |   |-- AddCompanyForm.jsx
+|   |   |-- CompanyList.jsx
+|   |   |-- UserDashBoard.jsx
+|   |   |-- CommunicationModel.jsx
+|   |   |-- Footer.jsx
+|   |-- App.jsx
+|   |-- index.jsx
 |-- public/
 |-- package.json
 ```
@@ -130,12 +133,7 @@ frontend/
 ### File Structure
 ```
 backend/
-|-- models/
-|   |-- Company.js
-|-- routes/
-|   |-- companyRoutes.js
-|-- controllers/
-|   |-- companyController.js
+|-- .env
 |-- server.js
 |-- package.json
 ```
@@ -170,16 +168,21 @@ backend/
 ## Screenshots
 
 ### 1. **Login Page**
-   ![Login Page](./screenshots/login.png)
+  
+![Screenshot (75)](https://github.com/user-attachments/assets/2c21f3d5-fdcc-4d9f-ae0b-474e17a6b856)
 
 ### 2. **Admin Dashboard**
-   ![Admin Dashboard](./screenshots/admin_dashboard.png)
+
+   ![Screenshot (80)](https://github.com/user-attachments/assets/872562e0-cd7c-4e02-83b8-0ffed3cf7733)
+
 
 ### 3. **Add Company Form**
-   ![Add Company Form](./screenshots/add_company.png)
+  ![Screenshot (81)](https://github.com/user-attachments/assets/b6ddd076-c550-466b-a9e5-a7c177550ca2)
 
 ### 4. **Company Data Section**
-   ![Company Data](./screenshots/company_data.png)
+
+   
+![Screenshot (82)](https://github.com/user-attachments/assets/2e755ba8-f39d-4fa3-982a-acb3a671bbde)
 
 ---
 
