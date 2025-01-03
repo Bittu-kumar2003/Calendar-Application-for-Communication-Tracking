@@ -189,16 +189,5 @@ backend/
    
 ![Screenshot (82)](https://github.com/user-attachments/assets/2e755ba8-f39d-4fa3-982a-acb3a671bbde)
 
----
 
-## Future Enhancements
-
-- Add user authentication with JWT.
-- Implement advanced search and filter options for companies.
-- Include file upload functionality for company profiles.
-- Enhance responsiveness for mobile devices.
-
----
-
-Feel free to reach out if you have any questions or need assistance with the application setup or usage.
 
