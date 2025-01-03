@@ -3,147 +3,194 @@
 ## Objective
 The Calendar Application for Communication Tracking is a React-based tool designed to help companies maintain strong professional relationships by efficiently tracking communications with other organizations. This application enables users to log past interactions, schedule future communications, and manage engagement frequency, ensuring timely and consistent follow-ups.
 
+# Admin Dashboard Application
+
+## Overview
+The Admin Dashboard application is a React-based web application designed for managing company-related information. It allows administrators to add, view, edit, and organize company data efficiently. This application follows a structured approach and provides clear navigation and user-friendly forms.
+
+---
+
+## Table of Contents
+
+1. [Features](#features)
+2. [Technologies Used](#technologies-used)
+3. [Setup Instructions](#setup-instructions)
+4. [Frontend Structure](#frontend-structure)
+5. [Backend Structure](#backend-structure)
+6. [How It Works](#how-it-works)
+7. [Screenshots](#screenshots)
+8. [Future Enhancements](#future-enhancements)
+
 ---
 
 ## Features
 
-### Admin Module
-- **Company Management:**
-  - Add, edit, and delete company records.
-  - Fields include:
-    - Name
-    - Location
-    - LinkedIn Profile
-    - Emails (multiple entries supported)
-    - Phone Numbers
-    - Comments
-    - Communication Periodicity (default time intervals like every 2 weeks).
-
-- **Communication Method Management:**
-  - Define available communication methods with the following properties:
-    - Name (e.g., "Visit")
-    - Description (e.g., "Visit to company premises")
-    - Sequence (e.g., LinkedIn Post → LinkedIn Message → Email → Phone Call → Other).
-    - Mandatory Flag (whether the method is mandatory).
-  - Default sequence:
-    1. LinkedIn Post
-    2. LinkedIn Message
-    3. Email
-    4. Phone Call
-    5. Other
+- Add, edit, and manage company data.
+- View the most recently added six companies on the main dashboard.
+- Store and display additional data in the "Company Data" section.
+- Validates email addresses during form submission.
+- Clear and simple navigation through different sections like "Home," "Profile," "Manage Companies," and "Company Data."
+- Logout functionality for secure access control.
 
 ---
 
-### User Module
+## Technologies Used
 
-#### Dashboard
-- **Grid View:**
-  - Each row represents a company.
-  - Columns include:
-    - Company Name
-    - Last Five Communications (type and date).
-    - Next Scheduled Communication (type and date).
+### Frontend
+- React
+- React Router
+- CSS-in-JS styling (inline styles and styled components)
 
-- **Color-Coded Highlights:**
-  - **Red:** Overdue communication.
-  - **Yellow:** Communication due today.
-  - Users can override or disable highlights for specific companies or tasks.
-
-- **Hover Effect:** Displays notes or comments on completed communications when hovering.
-
-#### Communication Action
-- Select one or multiple companies.
-- Log new communication via a modal:
-  - Select communication type (e.g., LinkedIn Post, Email).
-  - Input communication date.
-  - Add notes.
-- Resets highlights for the selected company/companies upon submission.
-
-#### Notifications
-- **Overdue Communications Grid:** Lists companies with overdue tasks.
-- **Today’s Communications Grid:** Displays tasks due today.
-- Notification icon with badge indicating overdue and due communication counts.
-
-#### Calendar View
-- **View Past Communications:** Displays past communication dates and methods.
-- **Manage Upcoming Communications:** Schedule and adjust future interaction dates and methods.
+### Backend
+- Node.js
+- Express
+- MongoDB (for data persistence)
 
 ---
 
-## Technology Stack
-- **Frontend:** React, React Calendar
-- **Backend:** Node.js/Express.js (optional, if APIs are needed)
-- **Database:** MongoDB or any preferred database for storing company and communication details
-- **Styling:** TailwindCSS or Material-UI
-- **State Management:** Redux (optional, for complex state handling)
+## Setup Instructions
 
----
+### Prerequisites
+Ensure you have the following installed on your machine:
 
-## Installation
+- Node.js (v14+)
+- MongoDB (local or cloud instance)
 
-1. **Clone the Repository:**
+### Steps
+
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/username/calendar-communication-tracker.git
-   cd calendar-communication-tracker
+   git clone https://github.com/your-username/admin-dashboard.git
+   cd admin-dashboard
    ```
 
-2. **Install Dependencies:**
-   ```bash
-   npm install
-   ```
-
-3. **Start the Application:**
-   ```bash
-   npm start
-   ```
-
-4. **Backend Setup (if applicable):**
-   - Navigate to the `server` folder.
-   - Install backend dependencies:
+2. **Install dependencies**
+   - Frontend:
      ```bash
+     cd frontend
      npm install
      ```
-   - Start the server:
+   - Backend:
      ```bash
-     npm run dev
+     cd backend
+     npm install
      ```
 
----
+3. **Configure Environment Variables**
+   - Create a `.env` file in the backend directory:
+     ```env
+     PORT=5000
+     MONGO_URI=mongodb+srv://username:password@cluster0.mongodb.net/mydatabase
+     ```
 
-## Usage
-1. Admins can:
-   - Add and configure companies.
-   - Define communication methods and their sequences.
+4. **Start the application**
+   - Backend:
+     ```bash
+     cd backend
+     npm start
+     ```
+   - Frontend:
+     ```bash
+     cd frontend
+     npm start
+     ```
 
-2. Users can:
-   - Log communication details.
-   - Track overdue and upcoming tasks.
-   - View and manage past and future communication schedules.
-
----
-
-## Roadmap
-- Add a Reporting and Analytics Module.
-- Support for integration with third-party tools like Google Calendar.
-- Enhanced notification settings (e.g., email or SMS alerts).
-- Role-based access control.
-
----
-
-## Contributing
-We welcome contributions! Please follow these steps:
-1. Fork the repository.
-2. Create a feature branch: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m 'Add a new feature'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Open a Pull Request.
+5. **Access the application**
+   Open your browser and navigate to `http://localhost:3000`.
 
 ---
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+## Frontend Structure
+
+### File Structure
+```
+frontend/
+|-- src/
+|   |-- components/
+|   |   |-- Navbar.js
+|   |   |-- AdminDashboard.js
+|   |   |-- AddCompanyForm.js
+|   |   |-- CompanyList.js
+|   |-- App.js
+|   |-- index.js
+|-- public/
+|-- package.json
+```
+
+### Highlights
+- **Navbar.js:** Contains navigation links and logout functionality.
+- **AdminDashboard.js:** Core dashboard component that includes forms and company display sections.
+- **AddCompanyForm.js:** Handles data input and validation.
+- **CompanyList.js:** Displays a paginated list of company data.
 
 ---
 
-## Contact
-For questions or suggestions, please contact [email@example.com](mailto:email@example.com).
+## Backend Structure
+
+### File Structure
+```
+backend/
+|-- models/
+|   |-- Company.js
+|-- routes/
+|   |-- companyRoutes.js
+|-- controllers/
+|   |-- companyController.js
+|-- server.js
+|-- package.json
+```
+
+### API Endpoints
+
+- **POST /api/companies**: Add a new company.
+- **GET /api/companies**: Retrieve all companies.
+- **PUT /api/companies/:id**: Update a company's information.
+- **DELETE /api/companies/:id**: Delete a company.
+
+---
+
+## How It Works
+
+### Adding Companies
+1. Navigate to the "Manage Companies" section.
+2. Fill out the form with valid details (e.g., valid email, LinkedIn profile URL).
+3. Click "Add Company." The company will be saved to the database and displayed on the dashboard.
+
+### Editing Companies
+1. Click the "Edit" button on a company card in the "Companies" section.
+2. Modify the details in the form.
+3. Click "Update Company." Changes will be saved to the database.
+
+### Viewing Company Data
+- The most recent six companies are displayed in the "Manage Companies" section.
+- Navigate to the "Company Data" section for a complete list of all companies.
+
+---
+
+## Screenshots
+
+### 1. **Login Page**
+   ![Login Page](./screenshots/login.png)
+
+### 2. **Admin Dashboard**
+   ![Admin Dashboard](./screenshots/admin_dashboard.png)
+
+### 3. **Add Company Form**
+   ![Add Company Form](./screenshots/add_company.png)
+
+### 4. **Company Data Section**
+   ![Company Data](./screenshots/company_data.png)
+
+---
+
+## Future Enhancements
+
+- Add user authentication with JWT.
+- Implement advanced search and filter options for companies.
+- Include file upload functionality for company profiles.
+- Enhance responsiveness for mobile devices.
+
+---
+
+Feel free to reach out if you have any questions or need assistance with the application setup or usage.
+
