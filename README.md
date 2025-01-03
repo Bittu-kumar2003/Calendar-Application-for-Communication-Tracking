@@ -166,6 +166,11 @@ backend/
 ---
 
 ## Screenshots
+### 1. **Register Page**
+![Screenshot (78)](https://github.com/user-attachments/assets/d918acb5-217d-45fc-acee-48341179cbcc)
+
+![Screenshot (79)](https://github.com/user-attachments/assets/a6225f54-3a77-4b92-bbd3-adb29ea78c36)
+
 
 ### 1. **Login Page**
   
